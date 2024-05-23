@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Report</title>
+    <!-- Add your CSS styles here -->
+</head>
+<body>
+    <h1>Monthly Report</h1>
+    <p>Date: {{ month }}</p>
+    <h2>Summary</h2>
+    <p>This is the summary section of the report.</p>
+
+    <h2>Data Table</h2>
+    <table>
+        <thead>
+            <tr>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Manufacture Date</th>
+                    <th>Expiry Date</th>
+                    <th>Price</th>
+                    <th>Rate Per Unit</th>
+                    <th>Tags</th>
+                    <th>Image</th>
+                    <th>Items in Stock</th>
+                    <th>Category</th>
+                </tr>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.description }}</td>
+                <td>{{ item.manufacture_date }}</td>
+                <td>{{ item.expiry_date }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.rate_per_unit }}</td>
+                <td>{{ item.tags }}</td>
+                <td>{{ item.iimg }}</td>
+                <td>{{ item.item_in_stock }}</td>
+                <td>{{ item.category_name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
